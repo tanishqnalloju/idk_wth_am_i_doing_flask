@@ -8,11 +8,11 @@
         <img class = "backbttn" src="{{url_for('static', filename='backbutton.png')}}" width="100px" height="50px" />
         </a>
         <br>
-        <title>{{Name}} {{Function}}</title>
+        <title>{{Name}} {{Job}}</title>
     </head>
 
     <body>
-        <h1 class= Content > {{Name}} {{Function}}</h1>
+        <h1 class= Content > {{Name}} {{Job}}</h1>
         <br>
 
         <h3 class="Content" >
@@ -42,7 +42,7 @@
             </div>
           </div> -->
 
-        {% if Function == 'Sort'%}
+        {% if Job == 'Sort'%}
         <h3> Sorting </h3>
         {%else%}
         <h4> Searching </h4>
