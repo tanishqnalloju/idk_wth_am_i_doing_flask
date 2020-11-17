@@ -1,0 +1,54 @@
+<!doctype html>
+    <link rel="stylesheet" href="{{ url_for('static', filename='sort.css') }}">
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <a href = "/">
+        <img class = "backbttn" src="{{url_for('static', filename='backbutton.png')}}" width="100px" height="50px" />
+        </a>
+        <br>
+        <title>{{Name}} {{Function}}</title>
+    </head>
+
+    <body>
+        <h1 class= Content > {{Name}} {{Function}}</h1>
+        <br>
+
+        <h3 class="Content" >
+            {{Description}}
+        </h3>
+        <br>
+
+        <h2 class="Content" >
+            Time Complexity 
+        </h2>
+        <br>
+        <img src = "{{time_complexity_img}}" />
+        <br>
+
+        <h2 class="Content" >
+            Space Complexity
+        </h2>
+        <br>
+        <img src = "{{url_for('static', filename ='image_name', width = 200, height = 200)}}" />
+        <br>
+
+        <!-- Resposnive Design -->
+        <!-- <div class="row">
+            <div class="column">
+              <img src="{{url_for('static', filename ='image_name', width = 200, height = 200)}}" />
+              <img src = "{{url_for('static', filename ='image_name', width = 200, height = 200)}}" />              
+            </div>
+          </div> -->
+
+        {% if Function == 'Sort'%}
+        <h3> Sorting </h3>
+        {%else%}
+        <h4> Searching </h4>
+        {%endif%}
+          
+        
+
+    </body>
+</html>
