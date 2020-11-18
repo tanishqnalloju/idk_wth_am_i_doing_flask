@@ -1,6 +1,18 @@
-import random
-def mergeSort(alist):
-    print("Splitting ",alist)
+def bubbleSort(unsorted_numbers):
+
+    alist = data_process(unsorted_numbers)
+
+    for passnum in range(len(alist)-1,0,-1):
+        for i in range(passnum):
+            if alist[i]>alist[i+1]:
+                change = alist[i]
+                alist[i] = alist[i+1]
+                alist[i+1] = change
+
+
+def mergeSort(unsorted_numbers):
+    #print("Splitting ",alist)
+    alist = data_process(unsorted_numbers)
     if len(alist)>1:
         mid = len(alist)//2
         lefthalf = alist[:mid]
@@ -30,13 +42,13 @@ def mergeSort(alist):
             alist[k]=righthalf[j]
             j=j+1
             k=k+1
-    print("Merging ",alist)
+    #print("Merging ",alist)
 
-alist = []
-for m in range(0,20):
-    x = random.randint(1,101)
-    alist.append(x)
-    
-mergeSort(alist)
-print(alist)
 
+
+
+def data_process(numbers:str):
+
+    #converting text to list 
+    num_list = list(map(int, numbers.strip().split(",")))
+    return num_list
