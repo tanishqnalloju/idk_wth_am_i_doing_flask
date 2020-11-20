@@ -1,3 +1,8 @@
+def data_process(numbers:str, key:str):
+    #converting text to list
+    num_list = list(map(str, numbers.strip().split(",")))
+    return num_list, key
+    
 def binary_search(unsorted_list, key):
 
     sorted_list, key = data_process(unsorted_list, key)
@@ -22,11 +27,5 @@ def linear_search(unsorted_list, key):
     for ele in unsorted_list:
         if ele == key:
             return True
-        
-    return False
-        
 
-def data_process(numbers:str, key:str):
-    #converting text to list 
-    num_list = list(map(str, numbers.strip().split(",")))
-    return num_list, key
+    return False

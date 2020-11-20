@@ -21,7 +21,7 @@
         <br>
 
         <h2 class="Content" >
-            Time Complexity 
+            Time Complexity
         </h2>
         <br>
         <img class="center" src = "{{url_for('static', filename =tc_img)}}" width="400px" height="300px" />
@@ -51,18 +51,21 @@
                 </p>
 
                 <p>
-                    <label for = "file_up"> 
+                    <label for = "file_up">
                         Upload
                     </label><input type = "file" name = "file_up"/>
                 </p>
-                
+
                 <p>
                     <input type = "submit" name = "submit" />
-                </p> 
-                
+                </p>
+                <h3>
+                    {{Message}}
+                </h3>
+
             </form>
             <!-- <p>
-                Result 
+                Result
                 {% if Output %}
                     <p> {{Output}} </p>
                 {% endif %}
@@ -83,27 +86,27 @@
                 </p>
 
                 <p>
-                    <label for = "file_up"> 
+                    <label for = "file_up">
                         Upload
                     </label><input type = "file" name = "file_up"/>
                 </p>
-                
+
                 <p>
                     <input type = "submit" name = "submit" />
-                </p> 
-                
+                </p>
+                <h3>
+                    {{Message}}
+                </h3>
+
             </form>
 
         {%endif%}
 
-        <p>
-            Result
-                <input type = "text" name = "result" value = "{{message}}" />
-        
+        <h3>
+            {{Message}}
+        </h3>
 
-        </p>
-          
-        
+
 
     </body>
 </html>
