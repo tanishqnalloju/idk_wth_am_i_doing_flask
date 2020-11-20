@@ -14,7 +14,7 @@ def binary_search(unsorted_list, key):
         mid = int((start + end) / 2)
         if key == sorted_list[mid]:
             #print("Entered number", key, "is present at position", mid)
-            find_index(sorted_list,index, key)
+            index = find_index(sorted_list, index, key)
             return True,index
         elif key < sorted_list[mid]:
             end = mid - 1
@@ -29,7 +29,7 @@ def linear_search(unsorted_list, key):
     unsorted_list, key = data_process(unsorted_list, key)
     for ele in unsorted_list:
         if ele == key:
-            find_index(unsorted_list, index, key)
+            index = find_index(unsorted_list, index, key)
             return True,index
     return False
 
