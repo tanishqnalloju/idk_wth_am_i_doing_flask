@@ -21,7 +21,7 @@
         <br>
 
         <h2 class="Content" >
-            Time Complexity 
+            Time Complexity
         </h2>
         <br>
         <img class="center" src = "{{url_for('static', filename =tc_img)}}" width="50px" height="100px" />
@@ -51,18 +51,23 @@
                 </p>
 
                 <p>
-                    <label for = "file_up"> 
+                    <label for = "file_up">
                         Upload
                     </label><input type = "file" name = "file_up"/>
                 </p>
-                
+
                 <p>
                     <input type = "submit" name = "submit" value = "{{Cust_Model.Job}}"/>
-                </p> 
-                
+                </p>
+
+                <p>
+                  The position of the number you wanted to find in the list is:
+                    <input type = "text" name = "result" value = "{{index}}" />
+                </p>
+
             </form>
             <!-- <p>
-                Result 
+                Result
                 {% if Output %}
                     <p> {{Output}} </p>
                 {% endif %}
@@ -77,15 +82,15 @@
                 </p>
 
                 <p>
-                    <label for = "file_up"> 
+                    <label for = "file_up">
                         Upload
                     </label><input type = "file" name = "file_up"/>
                 </p>
-                
+
                 <p>
                     <input type = "submit" name = "submit" value = "{{Cust_Model.Job}}"/>
-                </p> 
-                
+                </p>
+
             </form>
 
         {%endif%}
@@ -93,11 +98,10 @@
         <p>
             Result
                 <input type = "text" name = "result" value = "{{message}}" />
-        
-
         </p>
-          
-        
+
+
+
 
     </body>
 </html>

@@ -6,7 +6,7 @@ app = Flask(__name__)
 from CustomModels import ms, ls, bus, bis
 #Importing pre defined Sorting and Searching models
 #from CustomModels import MergeSort as ms, BubbleSort as bus, BinarySearch as bis, LinearSearch as ls
-from Sort import bubbleSort as bsort, mergeSort as msort 
+from Sort import bubbleSort as bsort, mergeSort as msort
 from Search import linear_search as lsearch, binary_search as bsearch
 
 @app.route("/")
@@ -36,7 +36,8 @@ def linear_search():
         input_text = request.form['input']
         key = request.form['search_ele']
         message = lsearch(input_text, key)
-        return render_template("public/sort.html", ren_list = input_text, ren_ele = key, message = message, Cust_Model = ls)
+        index = lsearch(input_text, key)
+        return render_template("public/sort.html", ren_list = input_text, ren_ele = key, message = message, Cust_Model = ls, index = index )
     return render_template("public/sort.html", Cust_Model = ls)
 
 @app.route("/binary_search", methods = ['GET', 'POST'])
@@ -45,9 +46,8 @@ def binary_search():
         input_text = request.form['input']
         key = request.form['search_ele']
         message = bsearch(input_text, key)
-        #print(message, request.form['file_up'])
-        return render_template("public/sort.html", ren_list = input_text, ren_ele = key, message = message, Cust_Model = ms)
-
+        index = bsearch(input_text, key)
+        return render_template("public/sort.html", ren_list = input_text, ren_ele = key, message = message, Cust_Model = ms, index = index)
     return render_template("public/sort.html", Cust_Model = bis)
 
 if __name__ == "__main__":
