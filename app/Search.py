@@ -28,5 +28,5 @@ def linear_search(unsorted_list, key):
 
 def data_process(numbers:str, key:str):
     #converting text to list 
-    num_list = list(map(str, numbers.strip().split(",")))
-    return num_list, key
+    num_list = list(map(int, numbers.strip().split(",")))
+    return num_list, int(key)

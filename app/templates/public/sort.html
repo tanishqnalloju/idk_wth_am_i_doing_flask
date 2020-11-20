@@ -8,15 +8,15 @@
         <img class = "backbttn" src="{{url_for('static', filename='backbutton.png')}}" width="100px" height="50px" />
         </a>
         <br>
-        <title>{{Name}} {{Job}}</title>
+        <title>{{Cust_Model.Name}} {{Cust_Model.Job}}</title>
     </head>
 
     <body>
-        <h1 class= "Content" > {{Name}} {{Job}}</h1>
+        <h1 class= "Content" > {{Cust_Model.Name}} {{Cust_Model.Job}}</h1>
         <br>
 
         <h3 class="Content" >
-            {{Description}}
+            {{Cust_Model.Description}}
         </h3>
         <br>
 
@@ -24,29 +24,29 @@
             Time Complexity 
         </h2>
         <br>
-        <img class="center" src = "{{url_for('static', filename =tc_img)}}" width="400px" height="300px" />
+        <img class="center" src = "{{url_for('static', filename =tc_img)}}" width="50px" height="100px" />
         <br>
 
         <h2 class="Content" >
             Space Complexity
         </h2>
         <br>
-        <img class="center" src = "{{url_for('static', filename =sc_img)}}" width="400px" height="300px" />
+        <img class="center" src = "{{url_for('static', filename =sc_img)}}" width="50px" height="100px" />
         <br>
 
 
-        {% if Job == 'Search'%}
-            <!-- <h3> Sorting </h3> -->
+        {% if Cust_Model.Job == 'Search'%}
+            <!-- <h3> Searching </h3> -->
             <form action="" method="POST">
                 <p>
                     <label for = "input">
                         Input
-                    </label><input type = "text" name = "input"/>
+                    </label><input type = "text" name = "input" value = "{{ren_list}}"/>
                 </p>
                 <p>
                     <label for = "search_ele">
                         Search Element
-                    </label><input type = "text" name = "search_ele"/>
+                    </label><input type = "text" name = "search_ele" value = "{{ren_ele}}"/>
 
                 </p>
 
@@ -57,7 +57,7 @@
                 </p>
                 
                 <p>
-                    <input type = "submit" name = "submit" />
+                    <input type = "submit" name = "submit" value = "{{Cust_Model.Job}}"/>
                 </p> 
                 
             </form>
@@ -68,18 +68,12 @@
                 {% endif %}
             </p> -->
         {%else%}
-            <!-- <h4> Searching </h4> -->
+            <!-- <h4> Sorting </h4> -->
             <form action="" method="POST">
                 <p>
                     <label for = "input">
                         Input
-                    </label><input type = "text" name = "input"/>
-                </p>
-                <p>
-                    <label for = "search_ele">
-                        Search Element
-                    </label><input type = "text" name = "search_ele"/>
-
+                    </label><input type = "text" name = "input" value = "{{ren_list}}"/>
                 </p>
 
                 <p>
@@ -89,7 +83,7 @@
                 </p>
                 
                 <p>
-                    <input type = "submit" name = "submit" />
+                    <input type = "submit" name = "submit" value = "{{Cust_Model.Job}}"/>
                 </p> 
                 
             </form>
