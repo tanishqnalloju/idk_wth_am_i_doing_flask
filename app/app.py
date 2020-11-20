@@ -35,8 +35,7 @@ def linear_search():
     if request.method == 'POST':
         input_text = request.form['input']
         key = request.form['search_ele']
-        message = lsearch(input_text, key)
-        index = lsearch(input_text, key)
+        message, index = lsearch(input_text, key)
         return render_template("public/sort.html", ren_list = input_text, ren_ele = key, message = message, Cust_Model = ls, index = index )
     return render_template("public/sort.html", Cust_Model = ls)
 
@@ -45,8 +44,7 @@ def binary_search():
     if request.method == 'POST':
         input_text = request.form['input']
         key = request.form['search_ele']
-        message = bsearch(input_text, key)
-        index = bsearch(input_text, key)
+        message, index = bsearch(input_text, key)
         return render_template("public/sort.html", ren_list = input_text, ren_ele = key, message = message, Cust_Model = ms, index = index)
     return render_template("public/sort.html", Cust_Model = bis)
 
