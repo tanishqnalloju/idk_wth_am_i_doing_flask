@@ -1,13 +1,25 @@
-def bubbleSort(unsorted_numbers):
+def data_process(numbers:str):
 
-    alist = data_process(unsorted_numbers)
+    #converting text to list 
+    num_list = list(map(int, numbers.strip().split(",")))
+    return num_list
 
+
+def bub_sort(alist):
     for passnum in range(len(alist)-1,0,-1):
         for i in range(passnum):
             if alist[i]>alist[i+1]:
                 change = alist[i]
                 alist[i] = alist[i+1]
                 alist[i+1] = change
+
+def bubbleSort(unsorted_numbers):
+
+    alist = data_process(unsorted_numbers)
+
+    return bub_sort(alist)
+
+
 
 
 def mergeSort(unsorted_numbers):
@@ -47,8 +59,3 @@ def mergeSort(unsorted_numbers):
 
 
 
-def data_process(numbers:str):
-
-    #converting text to list 
-    num_list = list(map(int, numbers.strip().split(",")))
-    return num_list
